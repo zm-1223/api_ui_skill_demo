@@ -1,0 +1,6 @@
+[32mINFO    [0m tigshop_test.page:base_page.py:28 打开页面: https://demo.tigshop.cn/item/SN0000548
+[32mINFO    [0m tigshop_test.page.product:product_page.py:27 打开商品页: /item/SN0000548
+[32mINFO    [0m tigshop_test.page.product:product_page.py:35 点击加入购物车
+[32mINFO    [0m tigshop_test.api.fixture:conftest.py:34 开始 API 用例: test_api_cart_004_update_quantity_legal
+[32mINFO    [0m tigshop_test.api.fixture:conftest.py:36 结束 API 用例: test_api_cart_004_update_quantity_legal
+[32mINFO    [0m tigshop_test.api.fixture:conftest.py:28 api_client fixture 清理完成
