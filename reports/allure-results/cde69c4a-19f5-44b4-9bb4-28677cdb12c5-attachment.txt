@@ -1,0 +1,8 @@
+[32mINFO    [0m tigshop_test.browser:browser_helper.py:52 Chrome WebDriver 已创建
+[32mINFO    [0m tigshop_test.auth:auth_helper.py:75 已向浏览器注入 accessToken Cookie
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:85 UI 用例前已 clear_cart: test_ord_001_order_list_shows_pending
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:92 开始 UI 用例: test_ord_001_order_list_shows_pending
+[32mINFO    [0m tigshop_test.page:base_page.py:28 打开页面: https://demo.tigshop.cn/member/order/list
+[32mINFO    [0m tigshop_test.page.order:order_page.py:23 打开订单列表
+[32mINFO    [0m tigshop_test.page.order:order_page.py:46 订单列表已加载
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:94 结束 UI 用例: test_ord_001_order_list_shows_pending
