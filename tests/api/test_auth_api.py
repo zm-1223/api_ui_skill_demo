@@ -15,8 +15,8 @@ class TestAuthApi:
         assert shared_access_token  # token 非空
         assert len(shared_access_token) > 20  # JWT 长度合理
         client = ShopApiClient(token=shared_access_token)  # 带 token 客户端
-        data = ShopApiClient.assert_ok(client.get_cart_count())  # 鉴权接口可通
-        assert "count" in data  # 返回含 count 字段
+        count = client.get_cart_count_value()  # 自定义：解析 getCount（data 可能为 int）
+        assert count >= 0  # 鉴权成功且返回数量
 
     def test_api_auth_002_wrong_password_fails(self, log_api_test):
         """API-AUTH-002：错误密码 API 登录业务失败。"""

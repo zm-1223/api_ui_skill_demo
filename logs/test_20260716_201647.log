@@ -1,0 +1,17 @@
+2026-07-16 20:16:47,650 [INFO] tigshop_test - pytest 会话开始，ROOT=D:\github-code\api_ui_skill_demo
+2026-07-16 20:16:48,021 [INFO] tigshop_test.token - 复用 file 中的 token
+2026-07-16 20:16:48,023 [INFO] tigshop_test - shared_access_token 已就绪，长度=272
+2026-07-16 20:16:48,024 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_auth_001_login_success_returns_token
+2026-07-16 20:16:48,239 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_auth_001_login_success_returns_token
+2026-07-16 20:16:48,243 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_auth_002_wrong_password_fails
+2026-07-16 20:16:48,245 [INFO] tigshop_test.api - API 登录: https://demo.tigshop.cn/api/user/login/signin
+2026-07-16 20:16:48,434 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_auth_002_wrong_password_fails
+2026-07-16 20:16:48,438 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_auth_003_cart_without_token_returns_401
+2026-07-16 20:16:48,623 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_auth_003_cart_without_token_returns_401
+2026-07-16 20:16:48,819 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_cart_001_empty_cart_count_zero
+2026-07-16 20:16:48,989 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_cart_001_empty_cart_count_zero
+2026-07-16 20:16:49,066 [INFO] tigshop_test.api.fixture - api_client fixture 清理完成
+2026-07-16 20:16:49,644 [INFO] tigshop_test.browser - ChromeDriver 路径已缓存: C:\Users\17584\.wdm\drivers\chromedriver\win64\150.0.7871.124\chromedriver-win64/chromedriver.exe
+2026-07-16 20:16:50,847 [INFO] tigshop_test.browser - Chrome WebDriver 已创建
+2026-07-16 20:16:51,874 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie + localStorage
+2026-07-16 20:16:52,070 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548

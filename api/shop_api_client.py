@@ -26,7 +26,12 @@ class ShopApiClient:
         body = resp.json()  # 第三方 requests：解析 JSON
         code = body.get("code")  # 自定义：业务码字段
         assert code == 0, f"业务 code={code}, msg={body.get('message') or body.get('msg')}"  # 断言
-        return body.get("data") or {}  # 返回 data，空则 {}
+        data = body.get("data")  # 取 data 节点
+        if data is None:  # 无 data
+            return {}  # 空 dict
+        if isinstance(data, dict):  # dict 直接返回
+            return data  # 返回
+        return {"value": data}  # int/str 等包装为 value 便于统一读取
 
     @staticmethod
     def assert_fail(resp: requests.Response, expected_code: int | None = None) -> dict:
@@ -38,6 +43,41 @@ class ShopApiClient:
         if expected_code is not None:  # 可选精确错误码
             assert code == expected_code, f"期望 code={expected_code}, 实际={code}"  # 断言
         return body  # 返回完整 body
+
+    @staticmethod
+    def pick_field(data: dict, *names: str, default=None):
+        """从 dict 按 camelCase/snake_case 多个候选键取值。"""
+        for name in names:  # 依次尝试
+            if name in data and data[name] is not None:  # 命中
+                return data[name]  # 返回值
+        return default  # 均未命中
+
+    @staticmethod
+    def parse_cart_count(data) -> int:
+        """解析 getCount 的 data：演示站可能返回 int 或 {count: n}。"""
+        if isinstance(data, int):  # 直接返回数量
+            return data  # int
+        if isinstance(data, dict):  # dict 包装
+            val = ShopApiClient.pick_field(data, "count", "value", default=0)  # 多键
+            return int(val or 0)  # 转 int
+        return 0  # 兜底 0
+
+    @staticmethod
+    def normalize_cart_item(item: dict | None) -> dict | None:
+        """为购物车行补充 snake_case 别名，兼容旧用例字段名。"""
+        if not item:  # 空
+            return item  # 原样
+        out = dict(item)  # 复制
+        aliases = {  # camelCase -> snake_case
+            "cartId": "cart_id",
+            "productId": "product_id",
+            "productSn": "product_sn",
+            "productPrice": "product_price",
+        }
+        for camel, snake in aliases.items():  # 补别名
+            if camel in item and snake not in out:  # 有 camel 无 snake
+                out[snake] = item[camel]  # 写入别名
+        return out  # 返回增强 dict
 
     def login(self, username: str | None = None, password: str | None = None) -> dict:
         """POST /api/user/login/signin；演示站可能返回 1002 需验证码。"""
@@ -55,10 +95,33 @@ class ShopApiClient:
         url = config.api_url("/cart/cart/getCount")  # camelCase 路径
         return self.session.get(url, timeout=30)  # GET 请求
 
+    def get_cart_count_value(self) -> int:
+        """getCount 并解析为 int 数量。"""
+        data = self.assert_ok(self.get_cart_count())  # 自定义：断言成功
+        return self.parse_cart_count(data)  # 自定义：解析数量
+
     def get_cart_list(self) -> requests.Response:
         """GET /api/cart/cart/list 购物车列表。"""
         url = config.api_url("/cart/cart/list")  # 列表接口
         return self.session.get(url, timeout=30)  # GET
+
+    def add_to_cart(
+        self,
+        product_id: int | None = None,
+        quantity: int = 1,
+        sku_id: int = 0,
+        is_quick: int = 0,
+    ) -> requests.Response:
+        """POST /api/cart/cart/addToCart 接口加购（比 UI 加购更稳定）。"""
+        url = config.api_url("/cart/cart/addToCart")  # 加购接口
+        payload = {
+            "id": product_id or config.product_id,  # 商品 ID
+            "number": quantity,  # 数量
+            "sku_id": sku_id,  # SKU（无规格为 0）
+            "is_quick": is_quick,  # 非立即购买
+        }
+        logger.info("API 加购: product_id=%s qty=%s", payload["id"], quantity)  # 日志
+        return self.session.post(url, json=payload, timeout=30)  # POST JSON
 
     def clear_cart(self) -> requests.Response:
         """POST /api/cart/cart/clear 清空购物车。"""
@@ -129,12 +192,30 @@ class ShopApiClient:
         return self.session.get(url, timeout=30)  # GET
 
     def first_cart_item(self) -> dict | None:
-        """从 list 响应中取第一条购物车商品。"""
+        """从 list 响应中取第一条购物车商品（兼容 cartList/cart_list）。"""
         data = self.assert_ok(self.get_cart_list())  # 自定义：拉列表并断言成功
-        for shop in data.get("cart_list", []):  # 遍历店铺分组
-            for item in shop.get("carts", []):  # 遍历购物车行
-                return item  # 返回第一条
+        shops = data.get("cartList") or data.get("cart_list") or []  # 店铺分组
+        for shop in shops:  # 遍历店铺
+            rows = shop.get("carts") or shop.get("cart_list") or []  # 行项目
+            for item in rows:  # 遍历行
+                return self.normalize_cart_item(item)  # 返回带别名条目
         return None  # 空车返回 None
+
+    def first_address_id(self, checkout_data: dict | None = None) -> int:
+        """从 checkout_index 数据取第一个 addressId。"""
+        chk = checkout_data if checkout_data is not None else self.assert_ok(self.checkout_index())  # 结算
+        addresses = chk.get("addressList") or chk.get("address_list") or []  # 地址列表
+        assert addresses, "账号需至少一条收货地址"  # 前置检查
+        addr = addresses[0]  # 第一条
+        aid = self.pick_field(addr, "addressId", "address_id")  # 多键取值
+        assert aid is not None, "地址缺少 addressId"  # 断言
+        return int(aid)  # 返回 int
+
+    def extract_order_id(self, submit_data: dict) -> int:
+        """从 submit 响应取 orderId/order_id。"""
+        oid = self.pick_field(submit_data, "orderId", "order_id")  # 多键
+        assert oid is not None, f"submit 响应无 orderId: {submit_data}"  # 断言
+        return int(oid)  # 返回 int
 
     @classmethod
     def with_ui_token(cls) -> "ShopApiClient":

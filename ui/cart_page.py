@@ -14,14 +14,31 @@ class CartPage(BasePage):
 
     PATH = "/cart"  # 购物车路由
 
-    _EMPTY_HINT = (By.XPATH, "//*[contains(text(),'购物车为空') or contains(text(),'暂无')]")  # 空态
-    _DELETE_BTN = (By.XPATH, "//button[contains(.,'删除')]")  # 删除按钮
-    _CHECKOUT_BTN = (By.XPATH, "//button[contains(.,'结算') or contains(.,'去结算')]")  # 去结算
-    _TOTAL_AREA = (By.XPATH, "//*[contains(text(),'合计') or contains(text(),'总计')]")  # 合计区域
+    _EMPTY_HINT = (
+        By.XPATH,
+        "//*[contains(text(),'购物车为空') or contains(text(),'暂无') or contains(text(),'空空') or contains(text(),'没有商品') or contains(text(),'去逛逛')]",
+    )  # 空态文案
+    _DELETE_BTN = (
+        By.XPATH,
+        "//button[contains(.,'删除')] | //span[contains(.,'删除')]/.. | //*[contains(@class,'delete')]",
+    )  # 删除按钮
+    _CHECKOUT_BTN = (
+        By.XPATH,
+        "//button[contains(.,'结算') or contains(.,'去结算') or contains(.,'提交')]",
+    )  # 去结算
+    _SELECT_ALL = (
+        By.XPATH,
+        "//label[contains(.,'全选')]//span[contains(@class,'checkbox')] | //input[@type='checkbox']",
+    )  # 全选勾选
+    _TOTAL_AREA = (
+        By.XPATH,
+        "//*[contains(text(),'合计') or contains(text(),'总计') or contains(text(),'应付')]",
+    )  # 合计区域
 
     def open_cart(self) -> "CartPage":
         """打开购物车页。"""
         self.open(self.PATH)  # 基类 open
+        self.popup.dismiss_cookie_if_present()  # 关 Cookie 弹窗
         logger.info("打开购物车页")  # 日志
         return self  # 链式
 
@@ -32,7 +49,18 @@ class CartPage(BasePage):
             return True  # 找到即空车
         except Exception:  # 超时未找到
             body = self.page_text()  # 读全文兜底
-            return "购物车为空" in body or "暂无" in body  # 文本判断
+            hints = ("购物车为空", "暂无", "空空", "没有商品", "去逛逛", "购物车是空的")  # 关键词
+            return any(h in body for h in hints)  # 任一命中
+
+    def select_all_if_present(self) -> "CartPage":
+        """若有全选框则勾选，确保可结算。"""
+        try:
+            box = self.wait.clickable(self._SELECT_ALL)  # 全选
+            box.click()  # 点击
+            logger.info("已勾选购物车全选")  # 日志
+        except Exception:  # 无全选则跳过
+            pass  # 不阻断
+        return self  # 链式
 
     def delete_first_item(self) -> "CartPage":
         """删除第一条购物车商品。"""
@@ -42,7 +70,8 @@ class CartPage(BasePage):
         return self  # 链式
 
     def go_checkout(self) -> "CartPage":
-        """点击去结算。"""
+        """勾选全选后点击去结算。"""
+        self.select_all_if_present()  # 先全选
         btn = self.wait.clickable(self._CHECKOUT_BTN)  # 结算按钮
         btn.click()  # 点击
         logger.info("点击去结算")  # 日志

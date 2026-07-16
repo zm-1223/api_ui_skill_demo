@@ -95,8 +95,9 @@
 
 | 方法 | 路径 | 说明 |
 |------|------|------|
-| GET | `/api/cart/cart/getCount` | 角标数量 |
-| GET | `/api/cart/cart/list` | 购物车列表 |
+| GET | `/api/cart/cart/getCount` | 角标数量（data 可能为 int） |
+| POST | `/api/cart/cart/addToCart` | **接口加购**（body: id/number/sku_id） |
+| GET | `/api/cart/cart/list` | 购物车列表（cartList/camelCase） |
 | POST | `/api/cart/cart/updateItem` | 改数量 |
 | POST | `/api/cart/cart/removeItem` | 删除 |
 | POST | `/api/cart/cart/clear` | 清空 |

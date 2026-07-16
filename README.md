@@ -79,7 +79,8 @@ pytest 启动
 | `driver` / `logged_in_driver` | **class** | 同一 TestClass 共用一个 Chrome（约 5 次/全量 UI） |
 | `driver`（`test_auth.py`） | **function** | 登录用例需独立 session，覆盖 class 级 |
 | `ui_browser` | **module** | 每个 API 测试文件共用一个 Chrome（约 3 次） |
-| `ui_add_product_once` | function | 复用 `ui_browser`，每条用例前 API clear + UI 加购 |
+| `ui_add_product_once` | function | 仅 API-CART-002 UI 加购验证 |
+| `api_add_product_once` | function | 默认 API 加购前置（addToCart） |
 | ChromeDriver 路径 | session | `utils/browser_helper.py` 缓存，避免重复 install |
 
 **预期**：Chrome 冷启动从 ~34 次降至 ~10 次（2 auth + 3 UI class + 3 API module + 缓存 driver）。

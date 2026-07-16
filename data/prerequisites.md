@@ -104,7 +104,7 @@ UI class 内每条用例前 autouse `clear_cart`；API `ui_add_product_once` 每
 
 | 说明 | 约定 |
 |------|------|
-| 路径风格 | **camelCase**（如 `getCount`，非 `get_count`） |
+| 字段风格 | **camelCase**（如 `cartList`、`addressList`、`orderId`） |
 | 成功码 | `code = 0` |
 | 商品页路由 | `/item/{productSn}`，非 `/product/{id}` |
 
@@ -114,8 +114,9 @@ UI class 内每条用例前 autouse `clear_cart`；API `ui_add_product_once` 每
 |------|------|------|
 | POST | `/api/user/login/signin` | 登录 |
 | GET | `/api/product/product/detail?id={id}` | 商品详情 |
-| GET | `/api/cart/cart/getCount` | 购物车角标 |
-| GET | `/api/cart/cart/list` | 购物车列表 |
+| GET | `/api/cart/cart/getCount` | 角标数量（返回 data 为 int 或 `{count:n}`） |
+| POST | `/api/cart/cart/addToCart` | 接口加购（推荐前置，比 UI 稳定） |
+| GET | `/api/cart/cart/list` | 购物车列表（字段 camelCase：`cartList`） |
 | POST | `/api/cart/cart/clear` | 清空购物车 |
 | POST | `/api/cart/cart/updateItem` | 改数量 |
 | POST | `/api/cart/cart/removeItem` | 删除商品 |

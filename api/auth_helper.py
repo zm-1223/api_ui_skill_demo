@@ -60,7 +60,7 @@ class AuthHelper:
 
     @staticmethod
     def inject_token_to_driver(driver, token: str | None = None) -> None:
-        """向已打开的 WebDriver 注入 accessToken Cookie，跳过登录页与滑块。"""
+        """向 WebDriver 注入 accessToken（Cookie + localStorage），跳过登录页。"""
         token = token or AuthHelper.get_token()  # 未传则取缓存 token
         driver.get(config.base_url)  # 必须先访问同域页面才能 add_cookie
         driver.add_cookie(
@@ -71,5 +71,11 @@ class AuthHelper:
                 "path": "/",  # 全站有效
             }
         )  # 框架 Selenium：注入 Cookie
+        driver.execute_script(  # 框架 Selenium：执行 JS 写 localStorage
+            "window.localStorage.setItem(arguments[0], arguments[1]);"
+            "window.localStorage.setItem('token', arguments[1]);",
+            config.token_cookie,
+            token,
+        )  # Vue 前端常从 localStorage 读 token
         driver.refresh()  # 刷新使登录态生效
-        logger.info("已向浏览器注入 accessToken Cookie")  # 日志
+        logger.info("已向浏览器注入 accessToken Cookie + localStorage")  # 日志

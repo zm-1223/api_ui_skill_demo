@@ -81,6 +81,7 @@
   },
   "cleanup": {
     "clear_cart_api": "POST /api/cart/cart/clear",
+    "add_to_cart_api": "POST /api/cart/cart/addToCart",
     "remove_item_api": "POST /api/cart/cart/removeItem"
   },
   "negative": {
