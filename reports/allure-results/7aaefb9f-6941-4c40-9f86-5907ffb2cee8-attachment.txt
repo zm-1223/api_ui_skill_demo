@@ -1,0 +1,7 @@
+[32mINFO    [0m tigshop_test.auth:auth_helper.py:81 已向浏览器注入 accessToken Cookie + localStorage
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:85 UI 用例前已 clear_cart: test_cart_002_add_item_shows_badge_one
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:92 开始 UI 用例: test_cart_002_add_item_shows_badge_one
+[32mINFO    [0m tigshop_test.page:base_page.py:28 打开页面: https://demo.tigshop.cn/item/SN0000548
+[32mINFO    [0m tigshop_test.page.product:product_page.py:38 打开商品页: /item/SN0000548
+[32mINFO    [0m tigshop_test.page.product:product_page.py:46 点击加入购物车
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:94 结束 UI 用例: test_cart_002_add_item_shows_badge_one

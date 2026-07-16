@@ -1,0 +1,9 @@
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:85 UI 用例前已 clear_cart: test_auth_001_login_success_goes_member_area
+[32mINFO    [0m tigshop_test.browser:browser_helper.py:52 Chrome WebDriver 已创建
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:92 开始 UI 用例: test_auth_001_login_success_goes_member_area
+[32mINFO    [0m tigshop_test.page:base_page.py:28 打开页面: https://demo.tigshop.cn/member/login
+[32mINFO    [0m tigshop_test.page.login:login_page.py:30 已勾选登录协议
+[32mINFO    [0m tigshop_test.page.login:login_page.py:40 已填写登录凭证: 123123
+[32mINFO    [0m tigshop_test.page.login:login_page.py:46 已点击登录按钮
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:94 结束 UI 用例: test_auth_001_login_success_goes_member_area
+[33mWARNING [0m tigshop_test.ui.fixture:conftest.py:42 失败截图跳过（无 driver）: The fixture value for "driver" is not available.  This can happen when the fixture has already been torn down.

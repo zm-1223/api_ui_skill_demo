@@ -1,0 +1,9 @@
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:85 UI 用例前已 clear_cart: test_ord_002_paid_status_when_exists
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:92 开始 UI 用例: test_ord_002_paid_status_when_exists
+[32mINFO    [0m tigshop_test.page:base_page.py:28 打开页面: https://demo.tigshop.cn/member/order/list
+[32mINFO    [0m tigshop_test.page.order:order_page.py:23 打开订单列表
+[32mINFO    [0m tigshop_test.page.order:order_page.py:46 订单列表已加载
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:94 结束 UI 用例: test_ord_002_paid_status_when_exists
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:74 logged_in_driver class 结束: <selenium.webdriver.chrome.webdriver.WebDriver (session="484f9e101d59c353f699332dcfc081bd")>
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:22 class 级 driver 关闭: TestOrderUi
+[32mINFO    [0m tigshop_test:conftest.py:34 shared_access_token 会话结束

@@ -1,0 +1,8 @@
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:85 UI 用例前已 clear_cart: test_cart_005_page_total_near_api_total
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:92 开始 UI 用例: test_cart_005_page_total_near_api_total
+[32mINFO    [0m tigshop_test.api:shop_api_client.py:123 API 加购: product_id=548 qty=1
+[32mINFO    [0m tigshop_test.page:base_page.py:28 打开页面: https://demo.tigshop.cn/cart
+[32mINFO    [0m tigshop_test.page.cart:cart_page.py:42 打开购物车页
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:94 结束 UI 用例: test_cart_005_page_total_near_api_total
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:74 logged_in_driver class 结束: <selenium.webdriver.chrome.webdriver.WebDriver (session="0306fae9be30846b5a88452d9c3f3880")>
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:22 class 级 driver 关闭: TestCartUi

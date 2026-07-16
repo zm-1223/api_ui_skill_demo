@@ -1,0 +1,4 @@
+[32mINFO    [0m tigshop_test.api:shop_api_client.py:123 API 加购: product_id=548 qty=1
+[32mINFO    [0m tigshop_test.api.fixture:conftest.py:34 开始 API 用例: test_api_cart_005_update_over_stock_fails
+[32mINFO    [0m tigshop_test.api.fixture:conftest.py:36 结束 API 用例: test_api_cart_005_update_over_stock_fails
+[32mINFO    [0m tigshop_test.api.fixture:conftest.py:28 api_client fixture 清理完成

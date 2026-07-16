@@ -1,0 +1,7 @@
+[32mINFO    [0m tigshop_test.browser:browser_helper.py:52 Chrome WebDriver 已创建
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:85 UI 用例前已 clear_cart: test_cart_001_empty_cart_shows_empty_hint
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:92 开始 UI 用例: test_cart_001_empty_cart_shows_empty_hint
+[32mINFO    [0m tigshop_test.auth:auth_helper.py:81 已向浏览器注入 accessToken Cookie + localStorage
+[32mINFO    [0m tigshop_test.page:base_page.py:28 打开页面: https://demo.tigshop.cn/cart
+[32mINFO    [0m tigshop_test.page.cart:cart_page.py:42 打开购物车页
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:94 结束 UI 用例: test_cart_001_empty_cart_shows_empty_hint
