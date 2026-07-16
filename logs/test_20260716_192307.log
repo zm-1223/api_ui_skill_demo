@@ -1,0 +1,245 @@
+2026-07-16 19:23:07,339 [INFO] tigshop_test - pytest 会话开始，ROOT=D:\github-code\api_ui_skill_demo
+2026-07-16 19:23:07,654 [INFO] tigshop_test.token - 复用 file 中的 token
+2026-07-16 19:23:07,655 [INFO] tigshop_test - shared_access_token 已就绪，长度=272
+2026-07-16 19:23:07,656 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_auth_001_login_success_returns_token
+2026-07-16 19:23:08,001 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_auth_001_login_success_returns_token
+2026-07-16 19:23:08,006 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_auth_002_wrong_password_fails
+2026-07-16 19:23:08,007 [INFO] tigshop_test.api - API 登录: https://demo.tigshop.cn/api/user/login/signin
+2026-07-16 19:23:08,246 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_auth_002_wrong_password_fails
+2026-07-16 19:23:08,252 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_auth_003_cart_without_token_returns_401
+2026-07-16 19:23:08,412 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_auth_003_cart_without_token_returns_401
+2026-07-16 19:23:08,621 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_cart_001_empty_cart_count_zero
+2026-07-16 19:23:08,789 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_cart_001_empty_cart_count_zero
+2026-07-16 19:23:08,873 [INFO] tigshop_test.api.fixture - api_client fixture 清理完成
+2026-07-16 19:23:11,517 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:23:11,518 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:23:25,367 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:23:25,429 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:23:25,442 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_cart_002_list_has_item_after_ui_add
+2026-07-16 19:23:25,686 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_cart_002_list_has_item_after_ui_add
+2026-07-16 19:23:30,369 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:23:30,370 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:23:44,181 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:23:44,245 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:23:44,258 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_cart_003_merge_quantity_on_repeat_add
+2026-07-16 19:23:44,505 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_cart_003_merge_quantity_on_repeat_add
+2026-07-16 19:23:49,437 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:23:49,438 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:24:03,296 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:24:03,371 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:24:03,388 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_cart_004_update_quantity_legal
+2026-07-16 19:24:03,752 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_cart_004_update_quantity_legal
+2026-07-16 19:24:06,076 [INFO] tigshop_test.api.fixture - api_client fixture 清理完成
+2026-07-16 19:24:09,862 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:24:09,862 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:24:23,702 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:24:23,784 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:24:23,803 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_cart_005_update_over_stock_fails
+2026-07-16 19:24:24,033 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_cart_005_update_over_stock_fails
+2026-07-16 19:24:26,388 [INFO] tigshop_test.api.fixture - api_client fixture 清理完成
+2026-07-16 19:24:29,446 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:24:29,446 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:24:43,294 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:24:43,379 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:24:43,397 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_cart_006_remove_single_item
+2026-07-16 19:24:43,616 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_cart_006_remove_single_item
+2026-07-16 19:24:48,947 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:24:48,948 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:25:02,960 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:25:03,067 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:25:03,095 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_cart_007_clear_cart
+2026-07-16 19:25:03,359 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_cart_007_clear_cart
+2026-07-16 19:25:08,315 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:25:08,315 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:25:22,174 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:25:22,251 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:25:22,269 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_cart_008_subtotal_matches_price_qty
+2026-07-16 19:25:22,455 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_cart_008_subtotal_matches_price_qty
+2026-07-16 19:25:27,367 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:25:27,368 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:25:41,216 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:25:41,282 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:25:41,298 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_cart_009_list_fields_complete
+2026-07-16 19:25:41,527 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_cart_009_list_fields_complete
+2026-07-16 19:25:46,456 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:25:46,456 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:26:00,258 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:26:00,333 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:26:00,346 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_chk_001_checkout_amount_matches_cart
+2026-07-16 19:26:00,707 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_chk_001_checkout_amount_matches_cart
+2026-07-16 19:26:03,048 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_chk_002_empty_cart_checkout_fails
+2026-07-16 19:26:03,210 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_chk_002_empty_cart_checkout_fails
+2026-07-16 19:26:03,287 [INFO] tigshop_test.api.fixture - api_client fixture 清理完成
+2026-07-16 19:26:05,905 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:26:05,905 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:26:19,695 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:26:19,775 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:26:19,797 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_chk_003_submit_order_returns_order_id
+2026-07-16 19:26:20,058 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_chk_003_submit_order_returns_order_id
+2026-07-16 19:26:24,845 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:26:24,845 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:26:38,742 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:26:38,815 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:26:38,838 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_chk_004_default_address_and_shipping
+2026-07-16 19:26:39,104 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_chk_004_default_address_and_shipping
+2026-07-16 19:26:43,781 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:26:43,783 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:26:57,672 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:26:57,746 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:26:57,766 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_chk_005_total_amount_calculation
+2026-07-16 19:26:58,007 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_chk_005_total_amount_calculation
+2026-07-16 19:27:02,980 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:27:02,980 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:27:16,817 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:27:16,883 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:27:16,897 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_pay_001_pay_index_amount_match
+2026-07-16 19:27:17,169 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_pay_001_pay_index_amount_match
+2026-07-16 19:27:21,756 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:27:21,757 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:27:35,683 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:27:35,756 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:27:35,769 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_pay_002_create_payment_returns_pay_info
+2026-07-16 19:27:35,995 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_pay_002_create_payment_returns_pay_info
+2026-07-16 19:27:40,694 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:27:40,695 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:27:54,572 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:27:54,636 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:27:54,653 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_pay_003_check_status_pending_by_default
+2026-07-16 19:27:54,884 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_pay_003_check_status_pending_by_default
+2026-07-16 19:27:59,584 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:27:59,585 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:28:13,397 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:28:13,470 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:28:13,487 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_pay_004_cancel_keeps_pending
+2026-07-16 19:28:13,726 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_pay_004_cancel_keeps_pending
+2026-07-16 19:28:18,627 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:28:18,629 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:28:32,433 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:28:32,497 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:28:32,510 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_ord_001_order_detail_fields
+2026-07-16 19:28:32,749 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_ord_001_order_detail_fields
+2026-07-16 19:28:37,864 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:28:37,865 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:28:51,874 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:28:51,968 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:28:51,986 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_ord_002_new_order_pending_payment
+2026-07-16 19:28:52,233 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_ord_002_new_order_pending_payment
+2026-07-16 19:28:57,049 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:28:57,049 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:29:10,821 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:29:10,895 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:29:10,919 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_ord_003_order_queryable_after_cancel_flow
+2026-07-16 19:29:11,175 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_ord_003_order_queryable_after_cancel_flow
+2026-07-16 19:29:15,106 [INFO] tigshop_test.ui.fixture - 开始 UI 用例: test_auth_001_login_success_goes_member_area
+2026-07-16 19:29:15,107 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/member/login
+2026-07-16 19:29:16,516 [INFO] tigshop_test.page.login - 已勾选登录协议
+2026-07-16 19:29:16,667 [INFO] tigshop_test.page.login - 已填写登录凭证: 123123
+2026-07-16 19:29:16,722 [INFO] tigshop_test.page.login - 已点击登录按钮
+2026-07-16 19:29:17,528 [INFO] tigshop_test.page.login - 登录成功，当前 URL: https://demo.tigshop.cn/
+2026-07-16 19:29:17,638 [INFO] tigshop_test.ui.fixture - 结束 UI 用例: test_auth_001_login_success_goes_member_area
+2026-07-16 19:29:21,371 [INFO] tigshop_test.ui.fixture - 开始 UI 用例: test_auth_002_wrong_password_stays_on_login
+2026-07-16 19:29:21,372 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/member/login
+2026-07-16 19:29:22,517 [INFO] tigshop_test.page.login - 已勾选登录协议
+2026-07-16 19:29:22,654 [INFO] tigshop_test.page.login - 已填写登录凭证: 123123
+2026-07-16 19:29:22,714 [INFO] tigshop_test.page.login - 已点击登录按钮
+2026-07-16 19:29:24,750 [INFO] tigshop_test.ui.fixture - 结束 UI 用例: test_auth_002_wrong_password_stays_on_login
+2026-07-16 19:29:28,538 [INFO] tigshop_test.ui.fixture - 开始 UI 用例: test_cart_001_empty_cart_shows_empty_hint
+2026-07-16 19:29:29,429 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:29:29,630 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/cart
+2026-07-16 19:29:30,067 [INFO] tigshop_test.page.cart - 打开购物车页
+2026-07-16 19:29:32,132 [INFO] tigshop_test.ui.fixture - 结束 UI 用例: test_cart_001_empty_cart_shows_empty_hint
+2026-07-16 19:29:32,211 [ERROR] tigshop_test.ui.fixture - 用例失败截图: D:\github-code\api_ui_skill_demo\reports\screenshots\test_cart_001_empty_cart_shows_empty_hint_20260716_192932.png
+2026-07-16 19:29:37,053 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:29:37,055 [INFO] tigshop_test.ui.fixture - 开始 UI 用例: test_cart_002_add_item_shows_badge_one
+2026-07-16 19:29:37,056 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:29:50,877 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:29:50,950 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:29:50,994 [INFO] tigshop_test.ui.fixture - 结束 UI 用例: test_cart_002_add_item_shows_badge_one
+2026-07-16 19:29:50,997 [INFO] tigshop_test.ui.fixture - logged_in_driver 用例结束
+2026-07-16 19:29:51,129 [ERROR] tigshop_test.ui.fixture - 用例失败截图: D:\github-code\api_ui_skill_demo\reports\screenshots\test_cart_002_add_item_shows_badge_one_20260716_192950.png
+2026-07-16 19:29:55,917 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:29:55,918 [INFO] tigshop_test.ui.fixture - 开始 UI 用例: test_cart_003_repeat_add_badge_increments
+2026-07-16 19:29:55,919 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:30:09,826 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:30:09,892 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:30:09,952 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:30:09,997 [INFO] tigshop_test.ui.fixture - 结束 UI 用例: test_cart_003_repeat_add_badge_increments
+2026-07-16 19:30:09,999 [INFO] tigshop_test.ui.fixture - logged_in_driver 用例结束
+2026-07-16 19:30:10,143 [ERROR] tigshop_test.ui.fixture - 用例失败截图: D:\github-code\api_ui_skill_demo\reports\screenshots\test_cart_003_repeat_add_badge_increments_20260716_193010.png
+2026-07-16 19:30:14,937 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:30:14,938 [INFO] tigshop_test.ui.fixture - 开始 UI 用例: test_cart_004_delete_item_badge_zero
+2026-07-16 19:30:14,941 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:30:28,767 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:30:28,912 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:30:29,017 [INFO] tigshop_test.page.product - 跳转购物车
+2026-07-16 19:30:31,080 [INFO] tigshop_test.ui.fixture - 结束 UI 用例: test_cart_004_delete_item_badge_zero
+2026-07-16 19:30:31,081 [INFO] tigshop_test.ui.fixture - logged_in_driver 用例结束
+2026-07-16 19:30:31,157 [ERROR] tigshop_test.ui.fixture - 用例失败截图: D:\github-code\api_ui_skill_demo\reports\screenshots\test_cart_004_delete_item_badge_zero_20260716_193031.png
+2026-07-16 19:30:36,029 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:30:36,030 [INFO] tigshop_test.ui.fixture - 开始 UI 用例: test_cart_005_page_total_near_api_total
+2026-07-16 19:30:36,031 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:30:49,948 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:30:50,011 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:30:50,227 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/cart
+2026-07-16 19:30:50,367 [INFO] tigshop_test.page.cart - 打开购物车页
+2026-07-16 19:30:50,751 [INFO] tigshop_test.ui.fixture - 结束 UI 用例: test_cart_005_page_total_near_api_total
+2026-07-16 19:30:50,753 [INFO] tigshop_test.ui.fixture - logged_in_driver 用例结束
+2026-07-16 19:30:55,945 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:30:55,946 [INFO] tigshop_test.ui.fixture - 开始 UI 用例: test_chk_001_checkout_shows_product_and_amount
+2026-07-16 19:30:55,947 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:31:09,801 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:31:09,875 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:31:09,963 [INFO] tigshop_test.page.product - 跳转购物车
+2026-07-16 19:31:12,040 [INFO] tigshop_test.ui.fixture - 结束 UI 用例: test_chk_001_checkout_shows_product_and_amount
+2026-07-16 19:31:12,042 [INFO] tigshop_test.ui.fixture - logged_in_driver 用例结束
+2026-07-16 19:31:12,122 [ERROR] tigshop_test.ui.fixture - 用例失败截图: D:\github-code\api_ui_skill_demo\reports\screenshots\test_chk_001_checkout_shows_product_and_amount_20260716_193112.png
+2026-07-16 19:31:17,038 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:31:17,040 [INFO] tigshop_test.ui.fixture - 开始 UI 用例: test_chk_002_submit_order_goes_payment
+2026-07-16 19:31:17,041 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:31:30,862 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:31:30,931 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:31:31,013 [INFO] tigshop_test.page.product - 跳转购物车
+2026-07-16 19:31:31,345 [INFO] tigshop_test.ui.fixture - 结束 UI 用例: test_chk_002_submit_order_goes_payment
+2026-07-16 19:31:31,347 [INFO] tigshop_test.ui.fixture - logged_in_driver 用例结束
+2026-07-16 19:31:31,502 [ERROR] tigshop_test.ui.fixture - 用例失败截图: D:\github-code\api_ui_skill_demo\reports\screenshots\test_chk_002_submit_order_goes_payment_20260716_193131.png
+2026-07-16 19:31:36,383 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:31:36,384 [INFO] tigshop_test.ui.fixture - 开始 UI 用例: test_chk_003_price_change_popup_confirm_continue
+2026-07-16 19:31:36,385 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:31:50,256 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:31:50,323 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:31:50,406 [INFO] tigshop_test.page.product - 跳转购物车
+2026-07-16 19:31:52,450 [INFO] tigshop_test.ui.fixture - 结束 UI 用例: test_chk_003_price_change_popup_confirm_continue
+2026-07-16 19:31:52,452 [INFO] tigshop_test.ui.fixture - logged_in_driver 用例结束
+2026-07-16 19:31:52,535 [ERROR] tigshop_test.ui.fixture - 用例失败截图: D:\github-code\api_ui_skill_demo\reports\screenshots\test_chk_003_price_change_popup_confirm_continue_20260716_193152.png
+2026-07-16 19:31:58,294 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:31:58,295 [INFO] tigshop_test.ui.fixture - 开始 UI 用例: test_chk_003_price_change_popup_confirm_continue
+2026-07-16 19:31:58,296 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:32:12,277 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:32:12,342 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:32:12,481 [INFO] tigshop_test.page.product - 跳转购物车
+2026-07-16 19:32:14,523 [INFO] tigshop_test.ui.fixture - 结束 UI 用例: test_chk_003_price_change_popup_confirm_continue
+2026-07-16 19:32:14,524 [INFO] tigshop_test.ui.fixture - logged_in_driver 用例结束
+2026-07-16 19:32:14,604 [ERROR] tigshop_test.ui.fixture - 用例失败截图: D:\github-code\api_ui_skill_demo\reports\screenshots\test_chk_003_price_change_popup_confirm_continue_20260716_193214.png
+2026-07-16 19:32:20,414 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:32:20,419 [INFO] tigshop_test.ui.fixture - 开始 UI 用例: test_chk_003_price_change_popup_confirm_continue
+2026-07-16 19:32:20,421 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:32:34,278 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:32:34,347 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:32:34,428 [INFO] tigshop_test.page.product - 跳转购物车
+2026-07-16 19:32:36,445 [INFO] tigshop_test.ui.fixture - 结束 UI 用例: test_chk_003_price_change_popup_confirm_continue
+2026-07-16 19:32:36,447 [INFO] tigshop_test.ui.fixture - logged_in_driver 用例结束
+2026-07-16 19:32:36,545 [ERROR] tigshop_test.ui.fixture - 用例失败截图: D:\github-code\api_ui_skill_demo\reports\screenshots\test_chk_003_price_change_popup_confirm_continue_20260716_193236.png
+2026-07-16 19:32:41,199 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:32:41,201 [INFO] tigshop_test.ui.fixture - 开始 UI 用例: test_pay_001_payment_page_shows_pending_or_pay
+2026-07-16 19:32:41,203 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:32:55,011 [INFO] tigshop_test.page.product - 打开商品页: /item/SN0000548
+2026-07-16 19:32:55,098 [INFO] tigshop_test.page.product - 点击加入购物车
+2026-07-16 19:32:55,190 [INFO] tigshop_test.page.product - 跳转购物车
+2026-07-16 19:32:57,251 [INFO] tigshop_test.ui.fixture - 结束 UI 用例: test_pay_001_payment_page_shows_pending_or_pay
+2026-07-16 19:32:57,254 [INFO] tigshop_test.ui.fixture - logged_in_driver 用例结束
+2026-07-16 19:32:57,337 [ERROR] tigshop_test.ui.fixture - 用例失败截图: D:\github-code\api_ui_skill_demo\reports\screenshots\test_pay_001_payment_page_shows_pending_or_pay_20260716_193257.png
+2026-07-16 19:33:03,258 [INFO] tigshop_test.auth - 已向浏览器注入 accessToken Cookie
+2026-07-16 19:33:03,259 [INFO] tigshop_test.ui.fixture - 开始 UI 用例: test_pay_001_payment_page_shows_pending_or_pay
+2026-07-16 19:33:03,260 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/item/SN0000548
+2026-07-16 19:33:38,133 [INFO] tigshop_test.ui.fixture - 结束 UI 用例: test_pay_001_payment_page_shows_pending_or_pay
+2026-07-16 19:33:38,136 [INFO] tigshop_test.ui.fixture - logged_in_driver 用例结束

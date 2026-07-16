@@ -1,0 +1,4 @@
+[32mINFO    [0m tigshop_test.token:token_store.py:98 复用 file 中的 token
+[32mINFO    [0m tigshop_test:conftest.py:32 shared_access_token 已就绪，长度=272
+[32mINFO    [0m tigshop_test.api.fixture:conftest.py:31 开始 API 用例: test_api_auth_001_login_success_returns_token
+[32mINFO    [0m tigshop_test.api.fixture:conftest.py:33 结束 API 用例: test_api_auth_001_login_success_returns_token

@@ -1,0 +1,33 @@
+[32mINFO    [0m WDM:logger.py:11 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:11 Driver [C:\Users\17584\.wdm\drivers\chromedriver\win64\150.0.7871.124\chromedriver-win64/chromedriver.exe] found in cache by browser version
+[32mINFO    [0m tigshop_test.auth:auth_helper.py:86 已向浏览器注入 accessToken Cookie
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:72 开始 UI 用例: test_chk_003_price_change_popup_confirm_continue
+[32mINFO    [0m tigshop_test.page:base_page.py:28 打开页面: https://demo.tigshop.cn/item/SN0000548
+[32mINFO    [0m tigshop_test.page.product:product_page.py:27 打开商品页: /item/SN0000548
+[32mINFO    [0m tigshop_test.page.product:product_page.py:35 点击加入购物车
+[32mINFO    [0m tigshop_test.page.product:product_page.py:53 跳转购物车
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:74 结束 UI 用例: test_chk_003_price_change_popup_confirm_continue
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:66 logged_in_driver 用例结束
+[31m[1mERROR   [0m tigshop_test.ui.fixture:conftest.py:41 用例失败截图: D:\github-code\api_ui_skill_demo\reports\screenshots\test_chk_003_price_change_popup_confirm_continue_20260716_193152.png
+[32mINFO    [0m WDM:logger.py:11 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:11 Driver [C:\Users\17584\.wdm\drivers\chromedriver\win64\150.0.7871.124\chromedriver-win64/chromedriver.exe] found in cache by browser version
+[32mINFO    [0m tigshop_test.auth:auth_helper.py:86 已向浏览器注入 accessToken Cookie
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:72 开始 UI 用例: test_chk_003_price_change_popup_confirm_continue
+[32mINFO    [0m tigshop_test.page:base_page.py:28 打开页面: https://demo.tigshop.cn/item/SN0000548
+[32mINFO    [0m tigshop_test.page.product:product_page.py:27 打开商品页: /item/SN0000548
+[32mINFO    [0m tigshop_test.page.product:product_page.py:35 点击加入购物车
+[32mINFO    [0m tigshop_test.page.product:product_page.py:53 跳转购物车
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:74 结束 UI 用例: test_chk_003_price_change_popup_confirm_continue
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:66 logged_in_driver 用例结束
+[31m[1mERROR   [0m tigshop_test.ui.fixture:conftest.py:41 用例失败截图: D:\github-code\api_ui_skill_demo\reports\screenshots\test_chk_003_price_change_popup_confirm_continue_20260716_193214.png
+[32mINFO    [0m WDM:logger.py:11 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:11 Driver [C:\Users\17584\.wdm\drivers\chromedriver\win64\150.0.7871.124\chromedriver-win64/chromedriver.exe] found in cache by browser version
+[32mINFO    [0m tigshop_test.auth:auth_helper.py:86 已向浏览器注入 accessToken Cookie
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:72 开始 UI 用例: test_chk_003_price_change_popup_confirm_continue
+[32mINFO    [0m tigshop_test.page:base_page.py:28 打开页面: https://demo.tigshop.cn/item/SN0000548
+[32mINFO    [0m tigshop_test.page.product:product_page.py:27 打开商品页: /item/SN0000548
+[32mINFO    [0m tigshop_test.page.product:product_page.py:35 点击加入购物车
+[32mINFO    [0m tigshop_test.page.product:product_page.py:53 跳转购物车
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:74 结束 UI 用例: test_chk_003_price_change_popup_confirm_continue
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:66 logged_in_driver 用例结束
+[31m[1mERROR   [0m tigshop_test.ui.fixture:conftest.py:41 用例失败截图: D:\github-code\api_ui_skill_demo\reports\screenshots\test_chk_003_price_change_popup_confirm_continue_20260716_193236.png

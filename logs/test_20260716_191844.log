@@ -1,0 +1,19 @@
+2026-07-16 19:18:44,994 [INFO] tigshop_test - pytest 会话开始，ROOT=D:\github-code\api_ui_skill_demo
+2026-07-16 19:18:45,515 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_auth_002_wrong_password_fails
+2026-07-16 19:18:45,516 [INFO] tigshop_test.api - API 登录: https://demo.tigshop.cn/api/user/login/signin
+2026-07-16 19:18:45,749 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_auth_002_wrong_password_fails
+2026-07-16 19:18:45,754 [INFO] tigshop_test.api.fixture - 开始 API 用例: test_api_auth_003_cart_without_token_returns_401
+2026-07-16 19:18:45,929 [INFO] tigshop_test.api.fixture - 结束 API 用例: test_api_auth_003_cart_without_token_returns_401
+2026-07-16 19:18:47,889 [INFO] tigshop_test.ui.fixture - 开始 UI 用例: test_auth_001_login_success_goes_member_area
+2026-07-16 19:18:47,891 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/member/login
+2026-07-16 19:18:49,133 [INFO] tigshop_test.page.login - 已勾选登录协议
+2026-07-16 19:18:49,306 [INFO] tigshop_test.page.login - 已填写登录凭证: 123123
+2026-07-16 19:18:49,380 [INFO] tigshop_test.page.login - 已点击登录按钮
+2026-07-16 19:18:50,049 [INFO] tigshop_test.page.login - 登录成功，当前 URL: https://demo.tigshop.cn/
+2026-07-16 19:18:50,088 [INFO] tigshop_test.ui.fixture - 结束 UI 用例: test_auth_001_login_success_goes_member_area
+2026-07-16 19:18:53,894 [INFO] tigshop_test.ui.fixture - 开始 UI 用例: test_auth_002_wrong_password_stays_on_login
+2026-07-16 19:18:53,895 [INFO] tigshop_test.page - 打开页面: https://demo.tigshop.cn/member/login
+2026-07-16 19:18:55,259 [INFO] tigshop_test.page.login - 已勾选登录协议
+2026-07-16 19:18:55,430 [INFO] tigshop_test.page.login - 已填写登录凭证: 123123
+2026-07-16 19:18:55,485 [INFO] tigshop_test.page.login - 已点击登录按钮
+2026-07-16 19:18:57,492 [INFO] tigshop_test.ui.fixture - 结束 UI 用例: test_auth_002_wrong_password_stays_on_login

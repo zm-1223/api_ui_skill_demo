@@ -1,0 +1,8 @@
+[32mINFO    [0m WDM:logger.py:11 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:11 Driver [C:\Users\17584\.wdm\drivers\chromedriver\win64\150.0.7871.124\chromedriver-win64/chromedriver.exe] found in cache by browser version
+[32mINFO    [0m tigshop_test.auth:auth_helper.py:86 已向浏览器注入 accessToken Cookie
+[32mINFO    [0m tigshop_test.page:base_page.py:28 打开页面: https://demo.tigshop.cn/item/SN0000548
+[32mINFO    [0m tigshop_test.page.product:product_page.py:27 打开商品页: /item/SN0000548
+[32mINFO    [0m tigshop_test.page.product:product_page.py:35 点击加入购物车
+[32mINFO    [0m tigshop_test.api.fixture:conftest.py:31 开始 API 用例: test_api_chk_004_default_address_and_shipping
+[32mINFO    [0m tigshop_test.api.fixture:conftest.py:33 结束 API 用例: test_api_chk_004_default_address_and_shipping

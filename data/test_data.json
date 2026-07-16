@@ -1,0 +1,89 @@
+{
+  "env": {
+    "base_url": "https://demo.tigshop.cn",
+    "api_prefix": "/api",
+    "login_url": "/member/login",
+    "member_url": "/member/index",
+    "cart_url": "/cart",
+    "checkout_url": "/order/check",
+    "order_list_url": "/member/order/list",
+    "payment_url_pattern": "/order/pay?id={order_id}",
+    "product_url_pattern": "/item/{product_sn}",
+    "headless": false
+  },
+  "wait": {
+    "implicit_wait_sec": 2,
+    "explicit_wait_sec": 2,
+    "popup_wait_sec": 3
+  },
+  "account": {
+    "username": "123123",
+    "password": "123123",
+    "login_type": "password",
+    "note": "全部用例共用同一账号"
+  },
+  "auth": {
+    "login_api": "POST /api/user/login/signin",
+    "login_body": {
+      "login_type": "password",
+      "username": "123123",
+      "password": "123123",
+      "mobile": "",
+      "mobile_code": "",
+      "verify_token": ""
+    },
+    "token_cookie": "accessToken",
+    "token_header": "Authorization",
+    "token_prefix": "Bearer "
+  },
+  "token_cache": {
+    "file": "data/token.json",
+    "env_var": "TIGSHOP_ACCESS_TOKEN",
+    "allow_ui_login_fallback": false,
+    "login_wait_sec": 15,
+    "note": "优先复用 token，避免每条用例登录触发滑块；token 失效时再手动更新"
+  },
+  "products": {
+    "default": {
+      "product_id": 548,
+      "product_sn": "SN0000548",
+      "product_name": "贝亲沐浴露（演示站商品，以接口实时为准）",
+      "price": 0,
+      "stock": 0,
+      "has_sku": false,
+      "sku_id": 0,
+      "shop_id": 0,
+      "detail_api": "GET /api/product/product/detail?id=548"
+    },
+    "merge_qty_first": 1,
+    "merge_qty_second": 2,
+    "update_qty_legal": 2,
+    "over_stock_qty": 99999
+  },
+  "checkout": {
+    "flow_type": 1,
+    "pay_type_id": 1,
+    "shipping_type": [
+      {
+        "type_id": 1,
+        "shop_id": 0,
+        "type_name": "默认快递"
+      }
+    ],
+    "use_point": 0,
+    "use_balance": 0,
+    "submit_note": "自动化测试订单，请勿发货"
+  },
+  "payment": {
+    "pay_type": "yunpay_alipay",
+    "expected_pending_status": "待支付",
+    "expected_paid_status": "已支付"
+  },
+  "cleanup": {
+    "clear_cart_api": "POST /api/cart/cart/clear",
+    "remove_item_api": "POST /api/cart/cart/removeItem"
+  },
+  "negative": {
+    "wrong_password": "wrong_pass"
+  }
+}

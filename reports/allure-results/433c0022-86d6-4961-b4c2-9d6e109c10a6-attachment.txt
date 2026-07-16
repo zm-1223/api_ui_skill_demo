@@ -1,0 +1,9 @@
+[32mINFO    [0m WDM:logger.py:11 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:11 Driver [C:\Users\17584\.wdm\drivers\chromedriver\win64\150.0.7871.124\chromedriver-win64/chromedriver.exe] found in cache by browser version
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:72 开始 UI 用例: test_auth_001_login_success_goes_member_area
+[32mINFO    [0m tigshop_test.page:base_page.py:28 打开页面: https://demo.tigshop.cn/member/login
+[32mINFO    [0m tigshop_test.page.login:login_page.py:30 已勾选登录协议
+[32mINFO    [0m tigshop_test.page.login:login_page.py:40 已填写登录凭证: 123123
+[32mINFO    [0m tigshop_test.page.login:login_page.py:46 已点击登录按钮
+[32mINFO    [0m tigshop_test.page.login:login_page.py:69 登录成功，当前 URL: https://demo.tigshop.cn/
+[32mINFO    [0m tigshop_test.ui.fixture:conftest.py:74 结束 UI 用例: test_auth_001_login_success_goes_member_area

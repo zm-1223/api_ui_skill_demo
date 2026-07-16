@@ -1,0 +1,2 @@
+# 本地 Token 缓存（含敏感 accessToken，勿提交仓库）
+data/token.json
