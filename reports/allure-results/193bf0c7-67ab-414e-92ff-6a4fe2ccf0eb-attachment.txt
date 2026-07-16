@@ -1,0 +1,2 @@
+[32mINFO    [0m tigshop_test.api.fixture:conftest.py:34 开始 API 用例: test_api_auth_003_cart_without_token_returns_401
+[32mINFO    [0m tigshop_test.api.fixture:conftest.py:36 结束 API 用例: test_api_auth_003_cart_without_token_returns_401

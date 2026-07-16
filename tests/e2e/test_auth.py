@@ -3,6 +3,18 @@ import pytest  # 框架 pytest
 
 from config.settings import config  # 自定义配置
 from ui.login_page import LoginPage  # 自定义 POM
+from utils.browser_helper import BrowserHelper  # 自定义：浏览器工厂
+
+
+@pytest.fixture(scope="function")  # 框架 pytest：登录用例需独立浏览器，覆盖 e2e/conftest class 级 driver
+def driver():
+    """
+    登录专项用例使用 function 级 driver。
+    避免 AUTH-001 登录成功后 AUTH-002 共用同一 session 导致断言失真。
+    """
+    drv = BrowserHelper.create_chrome()  # 自定义：启动 Chrome
+    yield drv  # 交给用例
+    drv.quit()  # 框架 Selenium：关闭
 
 
 @pytest.mark.ui  # UI 标记

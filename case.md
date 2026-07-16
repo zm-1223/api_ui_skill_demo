@@ -19,6 +19,7 @@
 | 登录等待 | 15s（UI 登录 / fallback） |
 | 弹窗等待 | 3s |
 | Token 复用 | `data/token.json` 或 `TIGSHOP_ACCESS_TOKEN` |
+| 浏览器复用 | UI class 级 driver；API module 级 ui_browser |
 | 默认商品 | `product_id=548`，`product_sn=SN0000548` |
 | 商品页 URL | `/item/SN0000548` |
 | 鉴权 | Cookie `accessToken` + `Authorization: Bearer <token>` |
@@ -246,6 +247,17 @@ pytest.ini 已配置：
 
 - `--html=reports/report.html --self-contained-html`
 - `--alluredir=reports/allure-results`
+
+### Fixture 作用域（方案 3）
+
+| 层级 | Fixture | scope | 效果 |
+|------|---------|-------|------|
+| 全局 | `shared_access_token` | session | 1 次 token 解析 |
+| UI | `driver` / `logged_in_driver` | class | 每 TestClass 1 个 Chrome |
+| UI 登录 | `driver` in `test_auth.py` | function | 登录用例互不污染 |
+| API | `ui_browser` | module | 每 api 测试文件 1 个 Chrome |
+| API | `ui_add_product_once` | function | 复用 browser，API 清车 + UI 加购 |
+| 工具 | `BrowserHelper.chromedriver_path` | session | chromedriver 只 install 一次 |
 
 ## 8. Skill 检查清单对照
 

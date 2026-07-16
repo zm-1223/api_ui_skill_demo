@@ -19,11 +19,12 @@ api_ui_skill_demo/
 │   ├── checkout_page.py
 │   ├── payment_page.py
 │   └── order_page.py
-├── utils/               # 等待、弹窗、日志、Token 复用
+├── utils/               # 等待、弹窗、日志、Token 复用、浏览器工厂
 │   ├── wait_helper.py
 │   ├── popup_helper.py
 │   ├── logger_helper.py
-│   └── token_store.py
+│   ├── token_store.py
+│   └── browser_helper.py
 ├── tests/
 │   ├── api/             # 24 条 API 用例
 │   └── e2e/             # 15 条 UI 用例
@@ -69,6 +70,19 @@ pytest 启动
 ```
 
 仅 **AUTH-001/002** 等登录专项 UI 用例仍走 `LoginPage` 真实登录流程。
+
+### Fixture 作用域（方案 3：少开浏览器）
+
+| Fixture | 作用域 | 说明 |
+|---------|--------|------|
+| `shared_access_token` | session | 全套件共用一个 token |
+| `driver` / `logged_in_driver` | **class** | 同一 TestClass 共用一个 Chrome（约 5 次/全量 UI） |
+| `driver`（`test_auth.py`） | **function** | 登录用例需独立 session，覆盖 class 级 |
+| `ui_browser` | **module** | 每个 API 测试文件共用一个 Chrome（约 3 次） |
+| `ui_add_product_once` | function | 复用 `ui_browser`，每条用例前 API clear + UI 加购 |
+| ChromeDriver 路径 | session | `utils/browser_helper.py` 缓存，避免重复 install |
+
+**预期**：Chrome 冷启动从 ~34 次降至 ~10 次（2 auth + 3 UI class + 3 API module + 缓存 driver）。
 
 ## 测试报告（浏览器打开）
 

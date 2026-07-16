@@ -1,10 +1,13 @@
-"""API 层 pytest fixtures：复用会话 token，仅清购物车不重复登录。"""
+"""API 层 pytest fixtures：module 级 UI 浏览器复用；token 会话共享。"""
 import logging  # 框架标准库
 
 import pytest  # 框架 pytest：fixture 装饰器
+from selenium.webdriver.remote.webdriver import WebDriver  # 框架 Selenium：驱动类型
 
 from api.auth_helper import AuthHelper  # 自定义：鉴权
 from api.shop_api_client import ShopApiClient  # 自定义：API 客户端
+from ui.product_page import ProductPage  # 自定义 POM：商品页加购
+from utils.browser_helper import BrowserHelper  # 自定义：浏览器工厂
 
 logger = logging.getLogger("tigshop_test.api.fixture")  # API fixture 日志
 
@@ -33,28 +36,24 @@ def log_api_test(request):
     logger.info("结束 API 用例: %s", request.node.name)  # 结束
 
 
-@pytest.fixture  # 框架 pytest：UI 加购辅助
-def ui_add_product_once(shared_access_token):
-    """注入 token 后 UI 加购一件商品，返回 token 供 API 断言。"""
-    from selenium import webdriver  # 框架 Selenium
-    from selenium.webdriver.chrome.options import Options  # Chrome 选项
-    from selenium.webdriver.chrome.service import Service  # Chrome 服务
-    from webdriver_manager.chrome import ChromeDriverManager  # 第三方 driver
+@pytest.fixture(scope="module")  # 框架 pytest：同文件共用浏览器
+def ui_browser(shared_access_token) -> WebDriver:
+    """module 级 Chrome：test_cart_api / test_checkout_api / test_payment_api 各启一次。"""
+    driver = BrowserHelper.create_chrome()  # 自定义：启动 Chrome
+    AuthHelper.inject_token_to_driver(driver, shared_access_token)  # 自定义：注入 token
+    yield driver  # 交给 module 内 ui_add_product_once
+    logger.info("module 级 ui_browser 关闭")  # 日志
+    driver.quit()  # 框架 Selenium：关闭
 
-    from config.settings import config  # 配置
-    from ui.product_page import ProductPage  # 自定义 POM
 
-    opts = Options()  # Chrome 配置
-    if config.headless:
-        opts.add_argument("--headless=new")  # 无头
-    opts.add_argument("--window-size=1400,900")  # 窗口
-    driver = webdriver.Chrome(
-        service=Service(ChromeDriverManager().install()), options=opts
-    )  # 启动浏览器
-    driver.implicitly_wait(config.implicit_wait)  # 隐性等待
-    try:
-        AuthHelper.inject_token_to_driver(driver, shared_access_token)  # 注入 Cookie，跳过登录
-        ProductPage(driver).open_product().add_to_cart(1)  # 加购 1 件
-        yield shared_access_token  # 返回共享 token
-    finally:
-        driver.quit()  # 关闭浏览器
+@pytest.fixture  # 框架 pytest：每条用例 function 级加购（复用 ui_browser）
+def ui_add_product_once(ui_browser, shared_access_token):
+    """
+    在 module 共享浏览器上 UI 加购 1 件；每条用例前 API clear 保证隔离。
+    浏览器只开 3 次（cart/checkout/payment 三个 module），不再每条用例冷启动。
+    """
+    client = ShopApiClient(token=shared_access_token)  # 自定义：API 客户端
+    client.clear_cart()  # setup：API 清车，避免 module 内前序用例污染
+    ProductPage(ui_browser).open_product().add_to_cart(1)  # 自定义 POM：UI 加购
+    yield shared_access_token  # 返回 token 供 ShopApiClient 构造
+    client.clear_cart()  # teardown：清车，便于下一条用例

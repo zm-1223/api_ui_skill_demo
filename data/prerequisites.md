@@ -61,6 +61,19 @@
 | 弹窗等待 | **3s** | Cookie/协议/价格变动等局部处理 |
 | 禁止 | `time.sleep()` | 使用 Selenium 等待机制 |
 
+### 3.1 Fixture 作用域（提速）
+
+| Fixture | 作用域 | 文件 |
+|---------|--------|------|
+| `shared_access_token` | session | `tests/conftest.py` |
+| `driver` / `logged_in_driver` | class | `tests/e2e/conftest.py` |
+| `driver`（登录专项） | function | `tests/e2e/test_auth.py` |
+| `ui_browser` | module | `tests/api/conftest.py` |
+| `ui_add_product_once` | function | `tests/api/conftest.py` |
+| ChromeDriver 路径 | session | `utils/browser_helper.py` |
+
+UI class 内每条用例前 autouse `clear_cart`；API `ui_add_product_once` 每条 setup/teardown 亦清车。
+
 ---
 
 ## 4. 数据前置

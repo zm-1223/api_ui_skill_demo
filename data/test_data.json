@@ -14,7 +14,7 @@
   "wait": {
     "implicit_wait_sec": 2,
     "explicit_wait_sec": 2,
-    "popup_wait_sec": 3
+    "popup_wait_sec": 2
   },
   "account": {
     "username": "123123",

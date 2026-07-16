@@ -1,15 +1,12 @@
 """登录态辅助：优先复用缓存 token，必要时才 UI 登录。"""
 import logging  # 框架标准库：日志
 
-from selenium import webdriver  # 框架 Selenium：浏览器驱动
-from selenium.webdriver.chrome.options import Options  # 框架 Selenium：Chrome 选项
-from selenium.webdriver.chrome.service import Service  # 框架 Selenium：Chrome 服务
 from selenium.webdriver.common.by import By  # 框架 Selenium：定位
-from webdriver_manager.chrome import ChromeDriverManager  # 第三方：自动管理 chromedriver
 
 from config.settings import config  # 自定义调用：全局配置
 from utils.token_store import TokenStore  # 自定义调用：Token 复用
 from utils.wait_helper import WaitHelper  # 自定义调用：显式等待
+from utils.browser_helper import BrowserHelper  # 自定义调用：浏览器工厂
 
 logger = logging.getLogger("tigshop_test.auth")  # 框架 logging：鉴权 logger
 
@@ -25,16 +22,8 @@ class AuthHelper:
     @staticmethod
     def login_via_ui(headless: bool | None = None) -> str:
         """通过 Selenium UI 登录（仅 fallback 或首次录入 token 时使用）。"""
-        use_headless = config.headless if headless is None else headless  # 是否无头
-        opts = Options()  # 框架 Selenium：Chrome 选项
-        if use_headless:  # 无头模式
-            opts.add_argument("--headless=new")  # headless 参数
-        opts.add_argument("--window-size=1400,900")  # 窗口大小
-        opts.add_argument("--disable-gpu")  # 稳定性
-        driver = webdriver.Chrome(
-            service=Service(ChromeDriverManager().install()), options=opts
-        )  # 启动 Chrome
-        driver.implicitly_wait(config.implicit_wait)  # 隐性等待
+        _ = headless  # 保留参数兼容；headless 由 config + BrowserHelper 控制
+        driver = BrowserHelper.create_chrome()  # 自定义：复用缓存 chromedriver 路径
         wait = WaitHelper(driver)  # 显式等待（默认 2s 用于元素）
         login_wait = config.login_wait_sec  # 登录专用更长等待
         try:
